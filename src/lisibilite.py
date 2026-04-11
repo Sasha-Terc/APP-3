@@ -1,12 +1,14 @@
 #Code de benjamin
-def lisibilite(dico):
-    for i in dico:
-        print(i)
 
-def lisibilite_formation(dico,formation):
-    L = []
-    for i in dico:
-        if i["program_id"] == formation:
-            L.append[i]
-    return L
+"""donne juste les valeurs car les clé sont les même
+et ça a un rendu plus lisible"""
+
+def lisibilite(liste_dicos):
+    liste = []
+    for dico in liste_dicos:
+        liste.append(list(dico.values()))
+    return liste
+
+
+
 
