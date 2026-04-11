@@ -1,9 +1,8 @@
-from lisibilite import lisibilite,lisibilite_formation
-from random import randint,random
+from lisibilite import lisibilite
+from tri_formation import tri_formation
+import random
 
 
-
-# verificateur pour lisibilité
 def generer_random_liste():
     dico = []
     for i in range(10):
@@ -26,9 +25,20 @@ def generer_random_liste():
     return dico
 
 dico = generer_random_liste()
-test1 = lisibilite(dico)
-test2 = [lisibilite_formation(dico,1),lisibilite_formation(dico,2),lisibilite_formation(dico,3)]
 
-print(dico)
-print(test1)
-print(test2)
+
+# pour lisibilite.py
+
+test1 = lisibilite(dico)
+
+for i in test1 : 
+    print(i)
+
+#pour tri_formation.py
+test2 = []
+
+for i in range(4):
+    test2 += tri_formation(dico,i)
+    
+for i in test2:
+    print(i)
