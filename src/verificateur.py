@@ -1,8 +1,8 @@
 from lisibilite import lisibilite
 from tri_formation import tri_formation
+from candidature import candidature
 import random
-
-
+# génére un dictionnaire pour faire les testes
 def generer_random_liste():
     dico = []
     for i in range(10):
@@ -34,6 +34,8 @@ test1 = lisibilite(dico)
 for i in test1 : 
     print(i)
 
+print(" ")
+
 #pour tri_formation.py
 test2 = []
 
@@ -42,3 +44,10 @@ for i in range(4):
     
 for i in test2:
     print(i)
+
+print(" ")
+
+#pour candidature.py
+
+print(candidature(dico,1))
+print (" ")
