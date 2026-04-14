@@ -1,5 +1,5 @@
 from lisibilite import lisibilite
-from tri_formation import tri_formation
+from tri_formation import id_formations
 from candidature import candidature
 import random
 # génére un dictionnaire pour faire les testes
@@ -37,10 +37,8 @@ for i in test1 :
 print(" ")
 
 #pour tri_formation.py
-test2 = []
 
-for i in range(4):
-    test2 += tri_formation(dico,i)
+test2 = id_formations(dico)
     
 for i in test2:
     print(i)
