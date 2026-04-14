@@ -1,12 +1,9 @@
 #code de sasha
-"""désolé j'avais fait ça en cours 
-suite a une demande que tu m'as fait 
-mais au final ça tri tout par formation """
-
-
-def tri_formation(dico,formation):
-    L = []
-    for i in dico:
-        if i["program_id"] == formation:
-            L.append([i])
-    return L
+def id_formations(dico):
+    liste_forma = []
+    for i in dico :
+        if i[4] not in liste_forma :
+            liste_forma.append(i[4])
+        else : 
+            continue
+    return liste_forma
