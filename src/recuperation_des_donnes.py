@@ -1,11 +1,6 @@
 def recuperation_donnes(fichier):
-    """Lit un fichier CSV et renvoie son contenu sous forme de liste de dictionnaires.
 
-    Le paramètre `fichier` est le nom du fichier dans le dossier APP3_Fichiers-20260409.
-    """
-    chemin = "../APP3_Fichiers-20260409/" + fichier
-
-    with open(chemin, "r", encoding="utf-8") as fichier_ouvert:
+    with open(fichier, "r", encoding="utf-8") as fichier_ouvert:
         lignes = []
         for ligne in fichier_ouvert:
             ligne_nettoyee = ligne.strip()
