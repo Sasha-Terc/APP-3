@@ -8,7 +8,3 @@ def lisibilite(liste_dicos):
     for dico in liste_dicos:
         liste.append(list(dico.values()))
     return liste
-
-
-
-
