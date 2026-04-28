@@ -1,7 +1,7 @@
-from lisibilite import lisibilite
-from tri_formation import id_formations
+import lisibilite
 from candidature import candidature
 import random
+from tri_formation import fusion,tri_formations
 # génére un dictionnaire pour faire les testes
 def generer_random_liste():
     dico = []
@@ -24,28 +24,24 @@ def generer_random_liste():
     
     return dico
 
-dico = generer_random_liste()
+u = generer_random_liste()
 
 
 # pour lisibilite.py
 
-test1 = lisibilite(dico)
+#test1 = lisibilite.lisibilite(dico)
 
-for i in test1 : 
-    print(i)
+#for i in test1 : 
+    #print(i)
 
-print(" ")
-
+#print(" ")
 #pour tri_formation.py
+print(tri_formations(liste))
 
-test2 = id_formations(dico)
-    
-for i in test2:
-    print(i)
-
-print(" ")
 
 #pour candidature.py
 
-print(candidature(dico,1))
-print (" ")
+#print(candidature(dico,1))
+#print (" ")
+
+#print(tri_formation(dico))
