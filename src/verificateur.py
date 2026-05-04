@@ -1,7 +1,7 @@
 import lisibilite
 from candidature import candidature
 import random
-from tri_formation import fusion,tri_formations
+from tri_formation import fusion, tri_formation
 # génére un dictionnaire pour faire les testes
 def generer_random_liste():
     dico = []
@@ -23,8 +23,7 @@ def generer_random_liste():
         })
     
     return dico
-
-u = generer_random_liste()
+dico = generer_random_liste()
 
 
 # pour lisibilite.py
@@ -36,7 +35,7 @@ u = generer_random_liste()
 
 #print(" ")
 #pour tri_formation.py
-print(tri_formations(liste))
+print(tri_formation(dico))
 
 
 #pour candidature.py

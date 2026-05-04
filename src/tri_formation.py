@@ -3,7 +3,7 @@ def fusion(l1,l2):
     liste = []
     i,j=0,0
     while i < len(l1) and j < len(l2):
-        if l1[i][2] < l2[j][2]:
+        if l1[i]["program_id"] < l2[j]["program_id"]:
             liste.append(l1[i])
             i += 1
         else:
