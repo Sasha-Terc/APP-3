@@ -1,6 +1,7 @@
 from lisibilite import lisibilite
-from tri_formation import id_formations
+from tri_formation import tri_formation,fusion
 from candidature import candidature
+from recuperation_des_donnes import recuperation_donnes
 import random
 # génére un dictionnaire pour faire les testes
 def generer_random_liste():
@@ -38,7 +39,7 @@ print(" ")
 
 #pour tri_formation.py
 
-test2 = id_formations(dico)
+test2 = tri_formation(dico)
     
 for i in test2:
     print(i)
@@ -49,3 +50,8 @@ print(" ")
 
 print(candidature(dico,1))
 print (" ")
+
+#pour recuperation_des_donnes
+
+print(recuperation_donnes("parcoursup_programs_small_800.csv"))
+print(" ")
