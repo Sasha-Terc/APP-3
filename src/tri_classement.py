@@ -2,11 +2,15 @@
 
 #### pour les tests seulement
 # mise en forme de la liste pour les tris
-Liste = []
-for d in dico:
-        if d["score"] not in Liste:
-            Liste.append(d["score"])
-print(Liste)        # verif de la liste
+def liste_score(dico):
+    Liste = []
+    for d in dico:
+            if d["score"] not in Liste:
+                Liste.append(d["score"])
+    return Liste
+Liste = liste_score(dico)
+print(Liste)
+# verif de la liste
 ####
 
 
@@ -20,5 +24,5 @@ def tri_classement(liste_dicos):
             L1.append(x)
         else:
             L2.append(x)
-    return tri(L1) + [e] + tri(L2)
-#print(tri(liste_dicos))
+    return tri_classement(L1) + [e] + tri_classement(L2)
+#print(tri_classement(liste_dicos))
