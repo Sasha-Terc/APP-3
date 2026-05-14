@@ -2,7 +2,7 @@ from lisibilite import lisibilite
 from tri_formation import tri_formation,fusion
 from candidature import candidature
 from recuperation_des_donnes import recuperation_donnes
-#from tri_classement import liste_score,tri_Classement
+from tri_classement import tri_classement,fusionn
 import random
 # génére un dictionnaire pour faire les testes
 def generer_random_liste():
@@ -54,5 +54,9 @@ print (" ")
 
 #pour recuperation_des_donnes
 
-print(recuperation_donnes("APP3_Fichiers-20260409/parcoursup_programs_small_800.csv"))
-print(" ")
+#print(recuperation_donnes("APP3_Fichiers-20260409/parcoursup_programs_small_800.csv"))
+#print(" ")
+
+#pour tri_classement.py
+print("tri classement ")
+print(tri_classement(dico))
