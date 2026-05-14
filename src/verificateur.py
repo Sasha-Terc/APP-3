@@ -2,6 +2,7 @@ from lisibilite import lisibilite
 from tri_formation import tri_formation,fusion
 from candidature import candidature
 from recuperation_des_donnes import recuperation_donnes
+from tri_classement import liste_score,tri_Classement
 import random
 # génére un dictionnaire pour faire les testes
 def generer_random_liste():

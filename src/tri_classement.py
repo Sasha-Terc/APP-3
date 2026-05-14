@@ -14,7 +14,7 @@ print(Liste)
 ####
 
 
-def tri_classement(liste_dicos):
+def tri_Classement(liste_dicos):
     if len(liste_dicos) < 2:
         return liste_dicos
     e = liste_dicos[0]
@@ -24,5 +24,5 @@ def tri_classement(liste_dicos):
             L1.append(x)
         else:
             L2.append(x)
-    return tri_classement(L1) + [e] + tri_classement(L2)
-#print(tri_classement(liste_dicos))
+    return tri_Classement(L1) + [e] + tri_Classement(L2)
+#print(tri_Classement(liste_dicos))
