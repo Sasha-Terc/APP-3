@@ -1,28 +1,27 @@
-#code de antonin
-
-#### pour les tests seulement
-# mise en forme de la liste pour les tris
-def liste_score(dico):
-    Liste = []
-    for d in dico:
-            if d["score"] not in Liste:
-                Liste.append(d["score"])
-    return Liste
-Liste = liste_score(dico)
-print(Liste)
-# verif de la liste
-####
-
-
-def tri_classement(liste_dicos):
-    if len(liste_dicos) < 2:
-        return liste_dicos
-    e = liste_dicos[0]
-    L1, L2 = [], []
-    for x in liste_dicos[1:]:
-        if x > e:
-            L1.append(x)
+def fusion(l1,l2): 
+    liste = []
+    i,j=0,0
+    while i < len(l1) and j < len(l2):
+        if l1[i]["program_id"] < l2[j]["program_id"]:
+            liste.append(l1[i])
+            i += 1
         else:
-            L2.append(x)
-    return tri_classement(L1) + [e] + tri_classement(L2)
-#print(tri_classement(liste_dicos))
+            liste.append(l2[j])
+            j += 1
+    while i < len(l1):
+        liste.append(l1[i])
+        i+=1
+    while j < len(l2):
+        liste.append(l2[j])
+        j+=1
+    return liste
+
+def tri_formation(formations): 
+    if len(formations) < 2 :
+        return formations[:2]
+    else :
+        mid =   len(formations) // 2
+        l1 = formations[:mid]
+        l2 = formations[mid:]
+        return fusion(l1,l2)
+
