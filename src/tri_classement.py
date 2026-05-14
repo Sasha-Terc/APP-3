@@ -21,14 +21,14 @@ def tri_classement(candidatures):
     if len(candidatures) < 2 :
         return candidatures[:2]  
     else :
-        for i in range(len(candidatures)-1):
+        for i in range(len(candidatures)):
             while candidatures[i]["program_id"] == candidatures[i+1]["program_id"]:
                 L1.append(candidatures[i])
             else :
-                L2.append(candidatures[i])
-        l2 = tri_classement(L2)
-        l1 = tri_classement(L1)
-        return fusionn(l1,l2)
+                L2.append(candidatures[i+1])
+        l2 =tri_classement(tri_classement(L2))
+        l1 = tri_classement(tri_classement(L1))
+    return fusionn(l1,l2)
           
     
 
