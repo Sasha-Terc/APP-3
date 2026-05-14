@@ -1,8 +1,8 @@
-def fusion(l1,l2): 
+def fusionn(l1,l2): 
     liste = []
     i,j=0,0
     while i < len(l1) and j < len(l2):
-        if l1[i]["program_id"] < l2[j]["program_id"]:
+        if l1[i]["score"] < l2[j]["score"]:
             liste.append(l1[i])
             i += 1
         else:
@@ -16,12 +16,19 @@ def fusion(l1,l2):
         j+=1
     return liste
 
-def tri_formation(formations): 
-    if len(formations) < 2 :
-        return formations[:2]
+def tri_classement(candidatures): 
+    L1 , L2 = [], []
+    if len(candidatures) < 2 :
+        return candidatures[:2]  
     else :
-        mid =   len(formations) // 2
-        l1 = formations[:mid]
-        l2 = formations[mid:]
-        return fusion(l1,l2)
+        for i in range(len(candidatures)-1):
+            while candidatures[i]["program_id"] == candidatures[i+1]["program_id"]:
+                L1.append(candidatures[i])
+            else :
+                L2.append(candidatures[i])
+        l2 = tri_classement(L2)
+        l1 = tri_classement(L1)
+        return fusionn(l1,l2)
+          
+    
 

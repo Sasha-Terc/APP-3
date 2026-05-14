@@ -22,8 +22,8 @@ def tri_formation(formations):
         return formations[:2]
     else :
         mid =   len(formations) // 2
-        l1 = formations[:mid]
-        l2 = formations[mid:]
+        l1 = tri_formation(formations[:mid])
+        l2 = tri_formation(formations[mid:])
         return fusion(l1,l2)
 
 
