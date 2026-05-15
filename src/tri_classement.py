@@ -25,4 +25,3 @@ def tri_classement(candidatures):
         l1 = tri_classement(candidatures[:mid])
         l2 = tri_classement(candidatures[mid:])
         return fusionn(l1,l2)
-
