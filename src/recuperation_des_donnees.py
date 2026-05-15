@@ -1,4 +1,4 @@
-def recuperation_donnes(fichier):
+def recuperation_donnees(fichier):
 
     with open(fichier, "r", encoding="utf-8") as fichier_ouvert:
         lignes = []

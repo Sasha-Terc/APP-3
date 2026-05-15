@@ -1,12 +1,7 @@
-<<<<<<< HEAD
 import lisibilite
-=======
-from lisibilite import lisibilite
-from tri_formation import tri_formation,fusion
->>>>>>> origin/main
 from candidature import candidature
-from recuperation_des_donnes import recuperation_donnes
-#from tri_classement import liste_score,tri_Classement
+from recuperation_des_donnees import recuperation_donnees
+from tri_classement import tri_classement_fusion ,fusionn, tri_classement_rapide
 import random
 from tri_formation import fusion, tri_formation
 # génére un dictionnaire pour faire les testes
@@ -44,7 +39,6 @@ dico = generer_random_liste()
 #pour tri_formation.py
 print(tri_formation(dico))
 
-<<<<<<< HEAD
 
 #pour candidature.py
 
@@ -52,21 +46,3 @@ print(tri_formation(dico))
 #print (" ")
 
 #print(tri_formation(dico))
-=======
-test2 = tri_formation(dico)
-    
-for i in test2:
-    print(i)
-
-print(" ")
-
-#pour candidature.py
-
-print(candidature(dico,1))
-print (" ")
-
-#pour recuperation_des_donnes
-
-print(recuperation_donnes("APP3_Fichiers-20260409/parcoursup_programs_small_800.csv"))
-print(" ")
->>>>>>> origin/main
