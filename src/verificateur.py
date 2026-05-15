@@ -53,5 +53,15 @@ print(" ")
 
 #pour tri_classement.py
 print("tri classement ")
+<<<<<<< HEAD
+u = tri_classement_rapide(dico)
+print(lisibilite(u))
+
+# pour tri_formation.py
+print("tri formation ")
+v = tri_formation(dico)
+print(lisibilite(v))
+=======
 
 print(tri_classement_rapide(dico))
+>>>>>>> main
