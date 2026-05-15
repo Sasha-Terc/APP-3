@@ -29,11 +29,12 @@ def tri_classement_fusion(candidatures):
 def tri_classement_rapide(candidatures):
     if len(candidatures) < 2:
         return candidatures[:2]
-    e = candidatures[0]["score"]
+    pivot = candidatures[0]
+    score_pivot = pivot["score"]
     L1,L2 = [],[]
-    for x in candidatures:
-        if x["score"] < e:
+    for x in candidatures[1:]:
+        if x["score"] < score_pivot:
             L1.append(x)
         else:
             L2.append(x)
-        return tri_classement_rapide(L1) + [e] + tri_classement_rapide(L2)
+    return tri_classement_rapide(L1) + [pivot] + tri_classement_rapide(L2)

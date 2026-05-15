@@ -1,8 +1,8 @@
 from lisibilite import lisibilite
-from tri_formation import tri_formation,fusion
+from tri_formation import fusion , tri_formation_rapide
 from candidature import candidature
 from recuperation_des_donnees import recuperation_donnees
-from tri_classement import tri_classement_fusion ,fusionn,tri_classement_rapide 
+from tri_classement import tri_classement_fusion ,fusionn, tri_classement_rapide
 import random
 # génére un dictionnaire pour faire les testes
 def generer_random_liste():
@@ -40,7 +40,6 @@ print(" ")
 
 #pour tri_formation.py
 
-print(" ")
 
 #pour candidature.py
 
@@ -54,5 +53,5 @@ print (" ")
 
 #pour tri_classement.py
 print("tri classement ")
-u = tri_classement_rapide(dico)
-print(lisibilite(u))
+
+print(tri_classement_rapide(dico))
