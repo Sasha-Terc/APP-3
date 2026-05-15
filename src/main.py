@@ -1,7 +1,7 @@
 from candidature import candidature
 from lisibilite import lisibilite
 from recuperation_des_donnees import recuperation_donnees
-from tri_classement import tri_classement
+from tri_classement import tri_classement_fusion, tri_classement_rapide
 from tri_formation import tri_formation
 
 # choix du fichier
@@ -94,7 +94,7 @@ non  --> 2
 """)
     if choix == "1":
         print("Voici les candidatures triées par classement : ")
-        tri = tri_classement(donnees)
+        tri = tri_classement_fusion(donnees)
         tri = tri_formation(tri)
         for i in tri:
             print(i)
