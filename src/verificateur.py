@@ -48,8 +48,8 @@ print (" ")
 
 #pour recuperation_des_donnes
 
-#print(recuperation_donnees("APP3_Fichiers-20260409/parcoursup_programs_small_800.csv"))
-#print(" ")
+print(recuperation_donnees("APP3_Fichiers-20260409/parcoursup_programs_small_800.csv"))
+print(" ")
 
 #pour tri_classement.py
 print("tri classement ")
