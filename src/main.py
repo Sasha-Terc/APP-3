@@ -41,6 +41,8 @@ else:
 donnees = recuperation_donnees(fichier)
 donnees_programs = recuperation_donnees(fichier_programs)
 
+# pour evité des bugs pour la suite, on tri donnees_programs par program_id
+donnees_programs = tri_formation(donnees_programs)
 # met les données sous forme de liste, les clés dépendent du fichier choisi
 print("Voici les données que vous avez choisi : ")
 readable = lisibilite(donnees)
@@ -124,6 +126,7 @@ non  --> 2
 quels est l'id de la formation ?
 ( répondez avec un nombre de 0 à {})""".format(valeur_max_programs))
                 
+                chaine = ""
                 for i in range (valeur_max_programs + 1):
                     chaine += str(i) + ","
                 while program_id not in chaine :
@@ -132,11 +135,13 @@ quels est l'id de la formation ?
 quels est l'id de la formation ?
 ( répondez avec un nombre de 0 à {})""".format(valeur_max_programs))
                 print("Voici la liste des candidats retenus pour la formation {} : ".format(program_id))
+                trouves = False
                 for i in retenus:
-                    if i["program_id"] == program_id:
+                    if int(i["program_id"]) == int(program_id):
                         print(i)
-                    else:
-                        print("Il n'y a pas de candidats retenus pour cette formation")
+                        trouves = True
+                if not trouves:
+                    print("Il n'y a pas de candidats retenus pour cette formation")
             else:
                 choix = input("""
 voulez vous voir la liste des candidats non retenus par formation ? :
@@ -156,6 +161,7 @@ non  --> 2
                         program_id = input("""
 quels est l'id de la formation ?
 ( répondez avec un nombre de 0 à {})""".format(valeur_max_programs))
+                        chaine = ""
                         for i in range (valeur_max_programs + 1):
                             chaine += str(i) + ","
 
@@ -165,8 +171,10 @@ quels est l'id de la formation ?
 quels est l'id de la formation ?
 ( répondez avec un nombre de 0 à {})""".format(valeur_max_programs))
                         print("Voici la liste des candidats non retenus pour la formation {} : ".format(program_id))
+                        trouves = False
                         for i in non_retenus:
-                            if i["program_id"] == int(program_id):
+                            if int(i["program_id"]) == int(program_id):
                                 print(i)
- 
-        
+                                trouves = True
+                        if not trouves:
+                            print("Il n'y a pas de candidats non retenus pour cette formation")
