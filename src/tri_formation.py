@@ -17,14 +17,16 @@ def fusion(l1,l2):
         j+=1
     return liste
 
-def tri_formation(formations): 
+def tri_formation_fusion(formations): 
     if len(formations) < 2 :
         return formations[:2]
     else :
         mid =   len(formations) // 2
-        l1 = tri_formation(formations[:mid])
-        l2 = tri_formation(formations[mid:])
-    return fusion(l1,l2)
+        l1 = formations[:mid]
+        l2 = formations[mid:]
+        L6 = tri_formation_fusion(l1)
+        L7 = tri_formation_fusion(l2)
+    return fusion(L6,L7)
 
 def tri_formation_rapide(formations):
     if len(formations) < 2:
