@@ -3,7 +3,8 @@ from candidature import candidature
 from recuperation_des_donnees import recuperation_donnees
 from tri_classement import tri_classement_fusion ,fusionn, tri_classement_rapide
 import random
-from tri_formation import fusion, tri_formation
+from tri_formation import fusion, tri_formation_fusion, tri_formation_rapide
+from tableau import bench_all , bench
 # génére un dictionnaire pour faire les testes
 def generer_random_liste():
     dico = []
@@ -37,7 +38,6 @@ dico = generer_random_liste()
 
 #print(" ")
 #pour tri_formation.py
-print(tri_formation(dico))
 
 
 #pour candidature.py
