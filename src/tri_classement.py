@@ -19,7 +19,7 @@ def fusionn(l1,l2):
 def tri_classement_fusion(candidatures): 
     L1 , L2 = [], []
     if len(candidatures) < 2 :
-        return candidatures[:2]
+        return candidatures
     else :
         mid =   len(candidatures) // 2
         l1 = tri_classement_fusion(candidatures[:mid])
@@ -37,8 +37,4 @@ def tri_classement_rapide(candidatures):
             L1.append(x)
         else:
             L2.append(x)
-<<<<<<< HEAD
     return tri_classement_rapide(L1) + [pivot] + tri_classement_rapide(L2)
-=======
-        return tri_classement_rapide(L1) + [e] + tri_classement_rapide(L2)
->>>>>>> origin/main
