@@ -17,14 +17,25 @@ def fusion(l1,l2):
         j+=1
     return liste
 
-def tri_formation(formations): 
+def tri_formation_fusion(formations): 
     if len(formations) < 2 :
         return formations[:2]
     else :
         mid =   len(formations) // 2
-        l1 = tri_formation(formations[:mid])
-        l2 = tri_formation(formations[mid:])
+        l1 = tri_formation_fusion(formations[:mid])
+        l2 = tri_formation_fusion(formations[mid:])
     return fusion(l1,l2)
 
-
+def tri_formation_rapide(formations):
+    if len(formations) < 2:
+        return formations[:2]
+    pivot = formations[0]
+    program_id_pivot = pivot["program_id"]
+    L1,L2 = [],[]
+    for x in formations[1:]:
+        if x["program_id"] < program_id_pivot:
+            L1.append(x)
+        else:
+            L2.append(x)
+    return tri_formation_rapide(L1) + [pivot] + tri_formation_rapide(L2)
 
