@@ -16,13 +16,24 @@ def fusionn(l1,l2):
         j+=1
     return liste
 
-def tri_classement(candidatures): 
+def tri_classement_fusion(candidatures): 
     L1 , L2 = [], []
     if len(candidatures) < 2 :
         return candidatures[:2]
     else :
         mid =   len(candidatures) // 2
-        l1 = tri_classement(candidatures[:mid])
-        l2 = tri_classement(candidatures[mid:])
+        l1 = tri_classement_fusion(candidatures[:mid])
+        l2 = tri_classement_fusion(candidatures[mid:])
         return fusionn(l1,l2)
 
+def tri_classement_rapide(candidatures):
+    if len(candidatures) < 2:
+        return candidatures[:2]
+    e = candidatures[0]["score"]
+    L1,L2 = [],[]
+    for x in candidatures:
+        if x["score"] < e:
+            L1.append(x)
+        else:
+            L2.append(x)
+        return tri_classement_rapide(L1) + [e] + tri_classement_rapide(L2)
