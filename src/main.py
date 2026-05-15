@@ -1,57 +1,52 @@
 from candidature import candidature
 from lisibilite import lisibilite
 from recuperation_des_donnees import recuperation_donnees
-#from tri_classement import tri_Classement
+from tri_classement import tri_classement
 from tri_formation import tri_formation
 
 # choix du fichier
 
 fichier = input(""" 
 Quel fichier voulez vous voir ? :
-parcoursup_programs_small_800       --> 1
+small      --> 1
 
-parcoursup_programs_small_10000     --> 2
+medium     --> 2
 
-parcoursup_programs_medium_2500     --> 3
-
-parcoursup_programs_medium_100000   --> 4
-
-parcoursup_programs_massive_5000    --> 5
-
-parcoursup_programs_massive_500000  --> 6
+massive    --> 3
 
 (choisissez avec les chiffres correspondant sinon ça mettra le numéro 1 par défaut)
 """)
 
-chiffres = ["1","2","3","4","5","6"]
+chiffres = "123"
 
 if fichier not in chiffres or fichier == "1" :
-    fichier = "APP3_Fichiers-20260409/parcoursup_programs_small_800.csv"
+    fichier_programs = "APP3_Fichiers-20260409/parcoursup_programs_small_800.csv"
+    fichier = "APP3_Fichiers-20260409/parcoursup_small_10000.csv"
     valeur_max = 800
 else:
     if fichier == "2":
-        fichier = "APP3_Fichiers-20260409/parcoursup_small_10000.csv"
-        valeur_max = 10000
-    elif fichier == "3":
-        fichier = "APP3_Fichiers-20260409/parcoursup_programs_medium_2500.csv"
-        valeur_max = 2500
-    elif fichier == "4":
+        fichier_programs = "APP3_Fichiers-20260409/parcoursup_programs_medium_2500.csv"
         fichier = "APP3_Fichiers-20260409/parcoursup_medium_100000.csv"
-        valeur_max = 100000
-    elif fichier == "5":
-        fichier = "APP3_Fichiers-20260409/parcoursup_programs_massive_5000.csv"
-        valeur_max = 5000
+        valeur_max = 10000
     else:
+        fichier_programs = "APP3_Fichiers-20260409/parcoursup_programs_massive_5000.csv"
         fichier = "APP3_Fichiers-20260409/parcoursup_massive_500000.csv"
-        valeur_max = 500000
+        valeur_max = 2500
 
 # récupération des données 
 donnees = recuperation_donnees(fichier)
+donnees_programs = recuperation_donnees(fichier_programs)
 
 # met les données sous forme de liste, les clés dépendent du fichier choisi
+print("Voici les données que vous avez choisi : ")
 readable = lisibilite(donnees)
 
 for i in readable:
+    print(i)
+
+print("Voici les données des programmes : ")
+readable_programs = lisibilite(donnees_programs)
+for i in readable_programs:
     print(i)
 
 # maintenant qu'on a les donnees, on choisi ce qu'on veut faire
@@ -66,15 +61,15 @@ comparer les tri implementes            --> 3
 
 chiffres = ["1","2","3"]
 # on cherche les donnees d'un candidat 
-if valeur_max == 10000 or valeur_max == 100000 or valeur_max == 500000 :
-    if choix not in chiffres or choix == "1" :
-        chaine = ""
-        candidate_id = input("""
+
+if choix not in chiffres or choix == "1" :
+    chaine = ""
+    candidate_id = input("""
 quels est l'id du candidat ?
 ( répondez avec un nombre de 0 à {})
 """.format(valeur_max))
-        for i in range (valeur_max + 1):
-            chaine += str(i) + ","
+    for i in range (valeur_max + 1):
+        chaine += str(i) + ","
 
         while candidate_id not in chaine :
             print("ce candidat n'existe pas")
@@ -82,6 +77,31 @@ quels est l'id du candidat ?
 quels est l'id du candidat ?
 ( répondez avec un nombre de 0 à {})
 """.format(valeur_max))
-    
 
+        print("Voici les données de la candidature {} : ".format(candidate_id))    
         print(candidature(donnees,candidate_id))
+elif choix == "2":
+    print("Voici les candidatures triées par formation : ")
+    tri = tri_formation(donnees)
+    for i in tri:
+        print(i)  
+
+    choix = input("""
+Voulez vous trier les candidatures par classement ? :
+oui  --> 1
+non  --> 2
+(choisissez avec les chiffres correspondant sinon ça mettra le numéro 2 par défaut)
+""")
+    if choix == "1":
+        print("Voici les candidatures triées par classement : ")
+        tri = tri_classement(donnees)
+        tri = tri_formation(tri)
+        for i in tri:
+            print(i)
+        choix = input("""
+voulez vous voir la liste des candidats retenus par formation ? :
+oui  --> 1
+non  --> 2
+(choisissez avec les chiffres correspondant sinon ça mettra le numéro 2 par défaut)
+""")
+        
