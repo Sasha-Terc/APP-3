@@ -45,4 +45,22 @@ dico = generer_random_liste()
 #print(candidature(dico,1))
 #print (" ")
 
-#print(tri_formation(dico))
+#pour recuperation_des_donnes
+
+print(recuperation_donnees("APP3_Fichiers-20260409/parcoursup_programs_small_800.csv"))
+print(" ")
+
+#pour tri_classement.py
+print("tri classement ")
+<<<<<<< HEAD
+u = tri_classement_rapide(dico)
+print(lisibilite(u))
+
+# pour tri_formation.py
+print("tri formation ")
+v = tri_formation(dico)
+print(lisibilite(v))
+=======
+
+print(tri_classement_rapide(dico))
+>>>>>>> main
