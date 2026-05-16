@@ -37,8 +37,4 @@ def tri_classement_rapide(candidatures):
             L1.append(x)
         else:
             L2.append(x)
-<<<<<<< HEAD
     return tri_classement_rapide(L1) + [pivot] + tri_classement_rapide(L2)
-=======
-        return tri_classement_rapide(L1) + [e] + tri_classement_rapide(L2)
->>>>>>> origin/main
