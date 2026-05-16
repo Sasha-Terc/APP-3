@@ -180,7 +180,7 @@ quels est l'id de la formation ?
                         if not trouves:
                             print("Il n'y a pas de candidats non retenus pour cette formation")
 else :
-    t1 = bench(donnes,tri_classement_fusion(donnees))
-    t2 = bench(donnes,tri_classement_rapide(donnees))
+    t1 = bench(donnees,tri_classement_fusion(donnees))
+    t2 = bench(donnees,tri_classement_rapide(donnees))
     print("Voici le temps d'execution du tri fusion : ", t1)
     print("Voici le temps d'execution du tri rapide : ", t2)
