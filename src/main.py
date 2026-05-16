@@ -69,19 +69,19 @@ chiffres = ["1","2","3"]
 # on cherche les donnees d'un candidat 
 
 if choix not in chiffres or choix == "1" :
-    chaine = ""
+    chaine = []
     candidate_id = input("""
 quels est l'id du candidat ?
-( répondez avec un nombre de 0 à {})
+( répondez avec un nombre de 1 à {})
 """.format(valeur_max))
-    for i in range (valeur_max + 1):
-        chaine += str(i) + ","
+    for i in range (1,valeur_max + 1):
+        chaine.append(str(i))
 
-        while candidate_id not in chaine :
-            print("ce candidat n'existe pas")
-            candidate_id = input("""
+    while candidate_id not in chaine:
+        print("ce candidat n'existe pas")
+        candidate_id = input("""
 quels est l'id du candidat ?
-( répondez avec un nombre de 0 à {})
+( répondez avec un nombre de 1 à {})
 """.format(valeur_max))
 
         print("Voici les données de la candidature {} : ".format(candidate_id))    
@@ -124,12 +124,12 @@ non  --> 2
             if choix == "1":
                 program_id = input("""
 quels est l'id de la formation ?
-( répondez avec un nombre de 0 à {})""".format(valeur_max_programs))
+( répondez avec un nombre de 1 à {})""".format(valeur_max_programs))
                 
                 chaine = ""
                 for i in range (valeur_max_programs + 1):
                     chaine += str(i) + ","
-                while program_id not in chaine and program_id != "0":
+                while program_id not in chaine or program_id == "0":
                     print("cette formation n'existe pas")
                     program_id = input("""
 quels est l'id de la formation ?
@@ -165,7 +165,7 @@ quels est l'id de la formation ?
                         for i in range (valeur_max_programs + 1):
                             chaine += str(i) + ","
 
-                        while program_id not in chaine and program_id != "0":
+                        while program_id not in chaine or program_id == "0":
                             print("cette formation n'existe pas")
                             program_id = input("""
 quels est l'id de la formation ?
