@@ -2,7 +2,7 @@ from candidature import candidature
 from lisibilite import lisibilite
 from recuperation_des_donnees import recuperation_donnees
 from tri_classement import tri_classement_fusion, tri_classement_rapide
-from tri_formation import tri_formation
+from tri_formation import tri_formation_rapide, tri_formation, fusion
 from admition import admition
 from tableau import bench
 
@@ -184,3 +184,7 @@ else :
     t2 = bench(donnees,tri_classement_rapide)
     print("Voici le temps d'execution du tri fusion : ", t1)
     print("Voici le temps d'execution du tri rapide : ", t2)
+
+""" le choix 3 ne fonctionne pas pour les gros fichiers car le tri rapide est très lent,
+il faudrait trouver une autre méthode de tri rapide plus efficace pour les gros fichiers 
+ou faire un tri rapide qui utilise moins de mémoire pour éviter les problèmes de mémoire """
