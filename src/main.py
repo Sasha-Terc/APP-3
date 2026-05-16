@@ -129,7 +129,7 @@ quels est l'id de la formation ?
                 chaine = ""
                 for i in range (valeur_max_programs + 1):
                     chaine += str(i) + ","
-                while program_id not in chaine :
+                while program_id not in chaine and program_id != "0":
                     print("cette formation n'existe pas")
                     program_id = input("""
 quels est l'id de la formation ?
@@ -165,7 +165,7 @@ quels est l'id de la formation ?
                         for i in range (valeur_max_programs + 1):
                             chaine += str(i) + ","
 
-                        while program_id not in chaine :
+                        while program_id not in chaine and program_id != "0":
                             print("cette formation n'existe pas")
                             program_id = input("""
 quels est l'id de la formation ?
