@@ -4,6 +4,7 @@ from recuperation_des_donnees import recuperation_donnees
 from tri_classement import tri_classement_fusion, tri_classement_rapide
 from tri_formation import tri_formation
 from admition import admition
+from tableau import bench
 
 # choix du fichier
 
@@ -178,3 +179,8 @@ quels est l'id de la formation ?
                                 trouves = True
                         if not trouves:
                             print("Il n'y a pas de candidats non retenus pour cette formation")
+else :
+    t1 = bench(donnes,tri_classement_fusion(donnees))
+    t2 = bench(donnes,tri_classement_rapide(donnees))
+    print("Voici le temps d'execution du tri fusion : ", t1)
+    print("Voici le temps d'execution du tri rapide : ", t2)

@@ -8,15 +8,3 @@ def bench(liste, func):
     func(liste)
     t2 = timer()
     return t2 - t1
-
-def tableau(liste):
-    t1 = bench(liste, tri_classement_fusion(liste))
-    t2 = bench(liste, tri_classement_rapide(liste))
-    plt.plot([len(liste)], [t1], marker='o', label="Tri fusion")
-    plt.plot([len(liste)], [t2], marker='s', label="Tri rapide")
-    plt.xlabel("Taille de la liste (n)")
-    plt.ylabel("Temps d'exécution (secondes)")
-    plt.title("Comparaison : Tri fusion vs Tri rapide")
-    plt.legend()
-    plt.grid(True)
-    plt.show()
