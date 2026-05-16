@@ -2,7 +2,7 @@ def fusionn(l1,l2):
     liste = []
     i,j=0,0
     while i < len(l1) and j < len(l2):
-        if l1[i]["score"] <= l2[j]["score"]:
+        if int(l1[i]["score"]) <= int(l2[j]["score"]):
             liste.append(l1[i])
             i += 1
         else:
@@ -32,10 +32,10 @@ def tri_classement_rapide(candidatures):
     if len(candidatures) < 2:
         return candidatures[:2]
     pivot = candidatures[0]
-    score_pivot = pivot["score"]
+    score_pivot = int(pivot["score"])
     L1,L2 = [],[]
     for x in candidatures[1:]:
-        if x["score"] < score_pivot:
+        if int(x["score"]) < score_pivot:
             L1.append(x)
         else:
             L2.append(x)
