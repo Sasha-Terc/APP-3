@@ -3,7 +3,7 @@ def fusion(l1,l2):
     liste = []
     i,j=0,0
     while i < len(l1) and j < len(l2):
-        if l1[i]["program_id"] < l2[j]["program_id"]:
+        if int(l1[i]["program_id"]) < int(l2[j]["program_id"]):
             liste.append(l1[i])
             i += 1
         else:
@@ -19,7 +19,7 @@ def fusion(l1,l2):
 
 def tri_formation(formations): 
     if len(formations) < 2 :
-        return formations[:2]
+        return formations[:]
     else :
         mid =   len(formations) // 2
         l1 = tri_formation(formations[:mid])
@@ -28,12 +28,12 @@ def tri_formation(formations):
 
 def tri_formation_rapide(formations):
     if len(formations) < 2:
-        return formations[:2]
+        return formations[:]
     pivot = formations[0]
-    program_id_pivot = pivot["program_id"]
+    program_id_pivot = int(pivot["program_id"])
     L1,L2 = [],[]
     for x in formations[1:]:
-        if x["program_id"] < program_id_pivot:
+        if int(x["program_id"]) < program_id_pivot:
             L1.append(x)
         else:
             L2.append(x)
